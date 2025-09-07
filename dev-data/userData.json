@@ -1,0 +1,26 @@
+[
+  {
+    "firstName": "علی",
+    "lastName": "کریمی",
+    "email": "ali.karimi@example.com",
+    "password": "hashed_password_123",
+    "mobileNumber": "09170000001",
+    "role": "owner"
+  },
+  {
+    "firstName": "زهرا",
+    "lastName": "حسینی",
+    "email": "zahra.hosseini@example.com",
+    "password": "hashed_password_123",
+    "mobileNumber": "09170000002",
+    "role": "staff"
+  },
+  {
+    "firstName": "مهدی",
+    "lastName": "جعفری",
+    "email": "mehdi.jafari@example.com",
+    "password": "hashed_password_123",
+    "mobileNumber": "09170000003",
+    "role": "staff"
+  }
+]

@@ -1,0 +1,15 @@
+[
+  {
+    "name": "رستوران سنتی پارسه",
+    "mobileNumber": "07132223344",
+    "address": {
+      "street": "خیابان زند",
+      "city": "شیراز",
+      "state": "فارس",
+      "zipCode": "71364"
+    },
+    "owner": "68bdf1d5fa487827e8271928",
+    "staff": ["68bdf1d5fa487827e8271929", "68bdf1d5fa487827e827192a"],
+    "isActive": true
+  }
+]
