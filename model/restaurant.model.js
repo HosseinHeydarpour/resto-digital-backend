@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+const menuSchema = require("./menu.model");
 
 const restaurantSchema = new Schema(
   {
@@ -52,6 +53,7 @@ const restaurantSchema = new Schema(
       type: String,
       trim: true,
     },
+    menus: [menuSchema],
   },
   { timestamps: true }
 );
