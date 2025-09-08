@@ -4,4 +4,6 @@ const router = express.router;
 
 const restaurantController = require("../controllers/restaurant.controller");
 
-router.route("/:id").get();
+router.route("/:id").get(restaurantController.getRestaurantInfo);
+
+module.exports = router;
