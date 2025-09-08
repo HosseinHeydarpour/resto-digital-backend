@@ -14,6 +14,13 @@ const restaurantSchema = new Schema(
       unique: true,
       trim: true,
     },
+    landLine: [
+      {
+        type: String,
+        unique: true,
+        trim: true,
+      },
+    ],
     address: {
       street: { type: String, trim: true },
       city: { type: String, trim: true },
@@ -34,6 +41,16 @@ const restaurantSchema = new Schema(
     isActive: {
       type: Boolean,
       default: true,
+    },
+    socialMedia: [
+      {
+        type: String,
+        trim: true,
+      },
+    ],
+    workingHours: {
+      type: String,
+      trim: true,
     },
   },
   { timestamps: true }
