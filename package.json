@@ -2,7 +2,7 @@
   "name": "restodigital-backend",
   "version": "1.0.0",
   "description": "Backend for resto-digital ",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
     "start": "nodemon server.js",
     "start:prod": "cross-env NODE_ENV=production nodemon server.js",
