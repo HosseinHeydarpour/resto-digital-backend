@@ -3,16 +3,10 @@ const catchAsync = require("../utlis/catchAsync");
 
 exports.getRestaurantInfo = catchAsync(async (req, res, next) => {
   const { id } = req.params;
-  const restaurant = await Restaurant.findOne({
-    $or: [{ owner: userId }, { staff: userId }],
-  });
 
-  if (!restaurant) {
-    return res.status(404).json({
-      status: "fail",
-      message: "رستورانی برای این کاربر پیدا نشد.",
-    });
-  }
+  const restaurant = await Restaurant.findOne({
+    $or: [{ owner: id }, { staff: id }],
+  });
 
   res.status(200).json({
     status: "success",
