@@ -1,26 +1,62 @@
 [
   {
+    "_id": "65e8a3b9f3d9a4f8c8b4c8c4",
     "firstName": "علی",
-    "lastName": "کریمی",
-    "email": "ali.karimi@example.com",
-    "password": "hashed_password_123",
-    "mobileNumber": "09170000001",
+    "lastName": "رضایی",
+    "email": "ali.rezaei@example.com",
+    "password": "hashed_password_1",
+    "mobileNumber": "09171112233",
+    "restaurant": "65e8a3b9f3d9a4f8c8b4c8c1",
     "role": "owner"
   },
   {
-    "firstName": "زهرا",
-    "lastName": "حسینی",
-    "email": "zahra.hosseini@example.com",
-    "password": "hashed_password_123",
-    "mobileNumber": "09170000002",
+    "_id": "65e8a3b9f3d9a4f8c8b4c8c5",
+    "firstName": "مریم",
+    "lastName": "احمدی",
+    "email": "maryam.ahmadi@example.com",
+    "password": "hashed_password_2",
+    "mobileNumber": "09173334455",
+    "restaurant": "65e8a3b9f3d9a4f8c8b4c8c1",
     "role": "staff"
   },
   {
-    "firstName": "مهدی",
-    "lastName": "جعفری",
-    "email": "mehdi.jafari@example.com",
-    "password": "hashed_password_123",
-    "mobileNumber": "09170000003",
+    "_id": "65e8a3b9f3d9a4f8c8b4c8c6",
+    "firstName": "محمد",
+    "lastName": "کریمی",
+    "email": "mohammad.karimi@example.com",
+    "password": "hashed_password_3",
+    "mobileNumber": "09175556677",
+    "restaurant": "65e8a3b9f3d9a4f8c8b4c8c2",
+    "role": "owner"
+  },
+  {
+    "_id": "65e8a3b9f3d9a4f8c8b4c8c7",
+    "firstName": "سارا",
+    "lastName": "محمدی",
+    "email": "sara.mohammadi@example.com",
+    "password": "hashed_password_4",
+    "mobileNumber": "09178889900",
+    "restaurant": "65e8a3b9f3d9a4f8c8b4c8c2",
     "role": "staff"
+  },
+  {
+    "_id": "65e8a3b9f3d9a4f8c8b4c8c8",
+    "firstName": "حمید",
+    "lastName": "جعفری",
+    "email": "hamid.jafari@example.com",
+    "password": "hashed_password_5",
+    "mobileNumber": "09172223344",
+    "restaurant": "65e8a3b9f3d9a4f8c8b4c8c2",
+    "role": "staff"
+  },
+  {
+    "_id": "65e8a3b9f3d9a4f8c8b4c8c9",
+    "firstName": "زهرا",
+    "lastName": "صادقی",
+    "email": "zahra.sadeghi@example.com",
+    "password": "hashed_password_6",
+    "mobileNumber": "09174445566",
+    "restaurant": "65e8a3b9f3d9a4f8c8b4c8c3",
+    "role": "owner"
   }
 ]
