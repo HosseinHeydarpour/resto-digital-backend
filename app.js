@@ -2,8 +2,8 @@ const express = require("express");
 
 const morgan = require("morgan");
 
-const AppError = require("./utils/appError");
-const globalErrorHandler = require("./controllers/errorController");
+const AppError = require("./utlis/appError");
+const globalErrorHandler = require("./controllers/error.controller");
 const restaurantRouter = require("./routes/restaurant.routes");
 
 const app = express();
