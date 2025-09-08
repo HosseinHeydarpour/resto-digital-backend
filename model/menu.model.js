@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
-const categorySchema = require("./category.schema"); // Import the category schema
+const categorySchema = require("./category.model"); // Import the category schema
 
 const menuSchema = new Schema(
   {
