@@ -2,11 +2,16 @@ const express = require("express");
 
 const morgan = require("morgan");
 
+const cors = require("cors");
+
 const AppError = require("./utlis/appError");
 const globalErrorHandler = require("./controllers/error.controller");
 const restaurantRouter = require("./routes/restaurant.routes");
 
 const app = express();
+
+// Allow all origins
+app.use(cors());
 
 if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));

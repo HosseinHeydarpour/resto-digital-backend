@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
+
 const Schema = mongoose.Schema;
+
 const menuSchema = require("./menu.model");
 
 const restaurantSchema = new Schema(

@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/HosseinHeydarpour/resto-digital-backend#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^17.2.2",
     "express": "^4.21.2",
     "mongodb": "^6.19.0",
