@@ -23,6 +23,7 @@
   "homepage": "https://github.com/HosseinHeydarpour/resto-digital-backend#readme",
   "dependencies": {
     "cors": "^2.8.5",
+    "cross-env": "^10.0.0",
     "dotenv": "^17.2.2",
     "express": "^4.21.2",
     "mongodb": "^6.19.0",
@@ -41,5 +42,8 @@
     "eslint-plugin-prettier": "^5.5.4",
     "eslint-plugin-react": "^7.37.5",
     "prettier": "^3.6.2"
+  },
+  "engines": {
+    "node": ">=14.0.0"
   }
 }
