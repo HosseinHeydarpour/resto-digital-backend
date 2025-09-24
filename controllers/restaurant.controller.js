@@ -4,6 +4,11 @@ const AppError = require("../utlis/appError");
 
 exports.getAllRestaurants = catchAsync(async (req, res, next) => {
   const restaurants = await Restaurant.find();
+
+  if (!restaurants || restaurants.length === 0) {
+    return next(new AppError("No restaurants found", 404));
+  }
+
   res.status(200).json({
     status: "success",
     results: restaurants.length,
