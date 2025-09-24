@@ -2,6 +2,15 @@ const Restaurant = require("../model/restaurant.model");
 const catchAsync = require("../utlis/catchAsync");
 const AppError = require("../utlis/appError");
 
+exports.getAllRestaurants = catchAsync(async (req, res, next) => {
+  const restaurants = await Restaurant.find();
+  res.status(200).json({
+    status: "success",
+    results: restaurants.length,
+    data: { restaurants },
+  });
+});
+
 exports.getRestaurantInfo = catchAsync(async (req, res, next) => {
   const { id } = req.params;
 
