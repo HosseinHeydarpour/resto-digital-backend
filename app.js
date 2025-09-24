@@ -24,6 +24,7 @@ app.use(express.json());
 // =========================
 app.use("/api/v1/restaurants", restaurantRouter);
 
+// Handle all other routes
 app.all("*", (req, res, next) => {
   next(new AppError(`Cannot find ${req.originalUrl} on this sever`, 404));
 });
