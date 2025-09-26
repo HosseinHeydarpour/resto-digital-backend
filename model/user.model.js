@@ -2,6 +2,8 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
+const bycrypt = require("bcryptjs");
+
 const userSchema = new Schema({
   firstName: {
     type: String,
@@ -27,6 +29,12 @@ const userSchema = new Schema({
   passwordConfirm: {
     type: String,
     required: [true, "Password confirm is a required field."],
+    validate: {
+      validator: function (el) {
+        return el === this.password;
+      },
+      message: "Password confirm must match password.",
+    },
   },
   mobileNumber: {
     type: String,
@@ -42,6 +50,16 @@ const userSchema = new Schema({
     enum: ["owner", "staff"],
     default: "owner",
   },
+});
+
+userSchema.pre("save", async function (next) {
+  //only run if password is modified
+  if (!this.isModified("password")) return next;
+
+  this.password = await bycrypt.hash(this.password, 12);
+
+  // remove password cinfirm just before saving
+  this.passwordConfirm = undefined;
 });
 
 const User = mongoose.model("User", userSchema);
