@@ -25,6 +25,7 @@ const userSchema = new Schema({
   password: {
     type: String,
     required: [true, "Password is a required field."],
+    select: false, // don't return password with user object
   },
   passwordConfirm: {
     type: String,
@@ -61,6 +62,13 @@ userSchema.pre("save", async function (next) {
   // remove password cinfirm just before saving
   this.passwordConfirm = undefined;
 });
+
+userSchema.methods.correctPassword = async function (
+  candidatePassword,
+  userPassword
+) {
+  return await bycrypt.compare(candidatePassword, userPassword);
+};
 
 const User = mongoose.model("User", userSchema);
 
