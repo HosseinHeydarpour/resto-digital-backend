@@ -4,7 +4,11 @@ const router = express.Router();
 
 const restaurantController = require("../controllers/restaurant.controller");
 
-router.route("/").get(restaurantController.getAllRestaurants);
+const authController = require("../controllers/auth.controller");
+
+router
+  .route("/")
+  .get(authController.protect, restaurantController.getAllRestaurants);
 
 router.route("/:id").get(restaurantController.getRestaurantInfo);
 
