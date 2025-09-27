@@ -1,3 +1,5 @@
+const utils = require("util");
+
 const jwt = require("jsonwebtoken");
 
 const User = require("../model/user.model");
@@ -12,14 +14,20 @@ const signToken = (id) =>
   });
 
 exports.signup = catchAsync(async (req, res, next) => {
-  const newUser = await User.create({
+  const userData = {
     firstName: req.body.firstName,
     lastName: req.body.lastName,
     email: req.body.email,
     password: req.body.password,
     passwordConfirm: req.body.passwordConfirm,
     mobileNumber: req.body.mobileNumber,
-  });
+  };
+
+  if (req.body.passwordChangedAt) {
+    userData.passwordChangedAt = req.body.passwordChangedAt;
+  }
+
+  const newUser = await User.create(userData);
 
   const token = signToken(newUser._id);
 
@@ -68,4 +76,29 @@ exports.protect = catchAsync(async (req, res, next) => {
   if (!token) {
     return next(new AppError("Please login to get access", 401));
   }
+
+  // Validate token
+  const decoded = await utils.promisify(jwt.verify)(
+    token,
+    process.env.JWT_SECRET
+  );
+
+  // If User exists
+  const currentUser = await User.findById(decoded.id);
+  if (!currentUser) {
+    return next(
+      new AppError("The user belonging to this token no longer exists")
+    );
+  }
+
+  // if user changed password
+  if (currentUser.changedPasswordAfter(decoded.iat)) {
+    return next(
+      new AppError("User recently changed password! Please log in again!", 401)
+    );
+  }
+
+  req.user = currentUser;
+
+  next();
 });
