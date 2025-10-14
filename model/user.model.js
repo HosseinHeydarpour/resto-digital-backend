@@ -41,15 +41,17 @@ const userSchema = new Schema({
     type: String,
     required: [true, "Mobile number is a required field."],
     trim: true,
+    unique: true,
   },
   restaurant: {
     type: Schema.Types.ObjectId,
     ref: "Restaurant",
+    default: null,
   },
   role: {
     type: String,
-    enum: ["owner", "staff"],
-    default: "owner",
+    enum: ["owner", "staff", "customer"],
+    default: "customer",
   },
   passwordChangedAt: Date,
 });
